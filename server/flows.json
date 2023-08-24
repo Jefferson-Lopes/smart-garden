@@ -1,0 +1,399 @@
+[
+    {
+        "id": "e3c964839803ccc6",
+        "type": "tab",
+        "label": "main",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "dd1017fb85282b44",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "blue",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "dark"
+            }
+        },
+        "site": {
+            "name": "Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "none",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "33bda428520b276f",
+        "type": "ui_tab",
+        "name": "Dashboard v0.1.0",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "2dc8fe1211d9d16f",
+        "type": "ui_group",
+        "name": "controls",
+        "tab": "33bda428520b276f",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2cb6e97c4285981b",
+        "type": "ui_group",
+        "name": "graphs",
+        "tab": "33bda428520b276f",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "99eb6680df2609e1",
+        "type": "serial-port",
+        "serialport": "/dev/ttyUSB0",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "19a92b9f7a771a43",
+        "type": "ui_switch",
+        "z": "e3c964839803ccc6",
+        "name": "",
+        "label": "system",
+        "tooltip": "",
+        "group": "2dc8fe1211d9d16f",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 460,
+        "y": 420,
+        "wires": [
+            [
+                "b94044532bf2f8cb"
+            ]
+        ]
+    },
+    {
+        "id": "8a66c8188db8a655",
+        "type": "ui_button",
+        "z": "e3c964839803ccc6",
+        "name": "",
+        "group": "2dc8fe1211d9d16f",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "pump",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "pump",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 470,
+        "y": 480,
+        "wires": [
+            [
+                "b94044532bf2f8cb"
+            ]
+        ]
+    },
+    {
+        "id": "b90479af1a679759",
+        "type": "ui_numeric",
+        "z": "e3c964839803ccc6",
+        "name": "",
+        "label": "threshold",
+        "tooltip": "",
+        "group": "2dc8fe1211d9d16f",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 460,
+        "y": 540,
+        "wires": [
+            [
+                "b94044532bf2f8cb"
+            ]
+        ]
+    },
+    {
+        "id": "f721a1d05ef5c179",
+        "type": "ui_chart",
+        "z": "e3c964839803ccc6",
+        "name": "",
+        "group": "2cb6e97c4285981b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "soil humidity (%)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 860,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f96d4e7fa6ac965a",
+        "type": "serial in",
+        "z": "e3c964839803ccc6",
+        "name": "",
+        "serial": "99eb6680df2609e1",
+        "x": 450,
+        "y": 760,
+        "wires": [
+            [
+                "00caa718e569fcf0"
+            ]
+        ]
+    },
+    {
+        "id": "08fce5134329bfe4",
+        "type": "serial out",
+        "z": "e3c964839803ccc6",
+        "name": "",
+        "serial": "99eb6680df2609e1",
+        "x": 850,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "b94044532bf2f8cb",
+        "type": "function",
+        "z": "e3c964839803ccc6",
+        "name": "format string",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 480,
+        "wires": [
+            [
+                "08fce5134329bfe4"
+            ]
+        ]
+    },
+    {
+        "id": "00caa718e569fcf0",
+        "type": "function",
+        "z": "e3c964839803ccc6",
+        "name": "process data",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 760,
+        "wires": [
+            [
+                "f721a1d05ef5c179",
+                "abc919f4ca909229"
+            ]
+        ]
+    },
+    {
+        "id": "abc919f4ca909229",
+        "type": "ui_chart",
+        "z": "e3c964839803ccc6",
+        "name": "",
+        "group": "2cb6e97c4285981b",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "temperature(°C)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "50",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#aec7e8",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#aec7e8",
+            "#f9f06b",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 860,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    }
+]
