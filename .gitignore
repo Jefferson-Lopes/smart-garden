@@ -36,12 +36,13 @@ node_modules
 .DS_Store
 
 # Node-RED
+*.backup
 *.config.json 
 *.config.json.backup
 *.sessions.json
-*.flow.json.backup
-*.flow_cred.json.backup
-*flow_cred.json
+*.flows.json.backup
+*.flows_cred.json.backup
+*flows_cred.json
 
 # platformIO
 *.pioenvs
