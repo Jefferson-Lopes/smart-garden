@@ -108,7 +108,7 @@
     {
         "id": "33bda428520b276f",
         "type": "ui_tab",
-        "name": "Dashboard v0.1.0",
+        "name": "Dashboard v0.2.0",
         "icon": "dashboard",
         "order": 1,
         "disabled": false,
@@ -263,9 +263,9 @@
         "dot": false,
         "ymin": "0",
         "ymax": "100",
-        "removeOlder": 1,
+        "removeOlder": "1",
         "removeOlderPoints": "",
-        "removeOlderUnit": "60",
+        "removeOlderUnit": "3600",
         "cutout": 0,
         "useOneColor": false,
         "useUTC": false,
@@ -283,7 +283,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 860,
+        "x": 880,
         "y": 720,
         "wires": [
             []
@@ -299,7 +299,8 @@
         "y": 760,
         "wires": [
             [
-                "00caa718e569fcf0"
+                "00caa718e569fcf0",
+                "3e35fce7dc39da00"
             ]
         ]
     },
@@ -336,20 +337,34 @@
         "id": "00caa718e569fcf0",
         "type": "function",
         "z": "e3c964839803ccc6",
-        "name": "process data",
-        "func": "\nreturn msg;",
-        "outputs": 1,
+        "name": "split data",
+        "func": "// split incoming data and debug messages\n\n// create vars\nconst debug = 'DEBUG:';\nconst soil = 'SOIL:';\nconst temp = 'TEMP:';\n\n// if contains DEBUG\nif (msg.payload.includes(debug)) {\n    let msg_copy = msg.payload;\n    msg_copy = msg_copy.replace('DEBUG:', '');\n    msg.payload = msg_copy;\n    return [msg, null, null, null];\n}\n// if contains SOIL\nelse if (msg.payload.includes(soil)) {\n    let msg_copy = msg.payload;\n    msg_copy = msg_copy.replace('SOIL:', '');\n    msg.payload = msg_copy;\n    return [null, msg, null, null];\n}\n// if contains TEMP\nelse if (msg.payload.includes(temp)) {\n    let msg_copy = msg.payload;\n    msg_copy = msg_copy.replace('TEMP:', '');\n    msg.payload = msg_copy;\n    return [null, null, msg, null];\n}\n// error\nelse {\n    return [null, null, null, msg];\n}",
+        "outputs": 4,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 650,
+        "x": 640,
         "y": 760,
         "wires": [
             [
-                "f721a1d05ef5c179",
+                "e8dbb7e3eeb02687"
+            ],
+            [
+                "f721a1d05ef5c179"
+            ],
+            [
                 "abc919f4ca909229"
+            ],
+            [
+                "06ee517430605cdf"
             ]
+        ],
+        "outputLabels": [
+            "DEBUG",
+            "SOIL",
+            "TEMP",
+            "ERROR"
         ]
     },
     {
@@ -370,7 +385,7 @@
         "dot": false,
         "ymin": "0",
         "ymax": "50",
-        "removeOlder": 1,
+        "removeOlder": "30",
         "removeOlderPoints": "",
         "removeOlderUnit": "60",
         "cutout": 0,
@@ -390,10 +405,61 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 860,
-        "y": 800,
+        "x": 880,
+        "y": 780,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "3e35fce7dc39da00",
+        "type": "debug",
+        "z": "e3c964839803ccc6",
+        "name": "raw_input",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "e8dbb7e3eeb02687",
+        "type": "debug",
+        "z": "e3c964839803ccc6",
+        "name": "debug_msg",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "06ee517430605cdf",
+        "type": "debug",
+        "z": "e3c964839803ccc6",
+        "name": "on_error",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 840,
+        "wires": []
     }
 ]
