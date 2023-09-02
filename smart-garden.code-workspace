@@ -5,7 +5,15 @@
         },
         {
             "path": "send_server"
+        },
+        {
+            "name": "firmware",
+            "path": "firmware"
         }
     ],
-    "settings": {}
+    "settings": {
+        "files.associations": {
+            "sdkconfig.h": "c"
+        }
+    }
 }
