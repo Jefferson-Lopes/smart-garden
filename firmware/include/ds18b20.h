@@ -12,10 +12,10 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#include <esp_system.h>
-
 #ifndef DS18B20_H_  
 #define DS18B20_H_
+
+#include <esp_system.h>
 
 #define noInterrupts() portMUX_TYPE mux = portMUX_INITIALIZER_UNLOCKED;taskENTER_CRITICAL(&mux)
 #define interrupts() taskEXIT_CRITICAL(&mux)

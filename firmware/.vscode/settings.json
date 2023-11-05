@@ -4,6 +4,12 @@
   "idf.portWin": "COM10",
   "idf.adapterTargetName": "esp32",
   "files.associations": {
-    "esp_log.h": "c"
-  }
+    "esp_log.h": "c",
+    "moist_sensor.h": "c",
+    "motor.h": "c",
+    "array": "c",
+    "string": "c",
+    "string_view": "c"
+},
+"idf.port": "/dev/ttyUSB0"
 }
