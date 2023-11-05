@@ -4,9 +4,6 @@
             "path": "."
         },
         {
-            "path": "send_server"
-        },
-        {
             "name": "firmware",
             "path": "firmware"
         }
